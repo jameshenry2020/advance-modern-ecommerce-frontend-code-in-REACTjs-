@@ -1,13 +1,175 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Fjalla+One&family=Lobster&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*{
+    box-sizing: border-box;
+    transition: .2s linear;
+    font-family: 'DM Sans', sans-serif;
+}
+/* html{
+    font-size: 70.7%;
+    
+} */
+
+body{
+    background: #f1f0f0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.login-container{
+    margin-top: 90px;
+}
+
+
+.homebanner{
+    width: 100vw;
+    padding-top: 6rem;
+    background: url(./static/imgs/home-bg-1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-bottom: 4rem;
+   
+}
+.slide-container{
+    height: 70vh;
+    width: 100vw;
+}
+
+
+.slide-container .slide{
+    width: 100%;
+    height: 70vh;
+    display: flex !important;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 5%;
+
+
+}
+.image{
+    position: relative;
+    flex: 1 1 35rem;
+    width: 50%;
+}
+.image img{
+    width: 90%;
+    object-fit: contain;
+    transform: rotate(-30deg);
+}
+
+.content{
+    flex: 1 1 35rem;
+    max-width:50%;
+    
+}
+
+.content span{
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #444;
+
+}
+
+.content h3{
+    font-size: 2rem;
+    color: rgb(20, 20, 20);
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+.content .btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .5rem 2rem;
+    background: #cf0f0f;
+    color: #f1f0f0;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.content .btn:hover{
+    background: black;
+}
+
+.hid{
+    /* visibility: hidden; */
+}
+.size-selector input:checked+label{
+    background-color: #2b0808 !important;
+    color: white;
+}
+.t_active{
+    transform: scale(1.2);
+    transition: all 300ms;
+}
+
+.Spinner{
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+.Spinner div{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border:8px solid transparent;
+    border-top-color: rgb(20, 20, 20);
+    border-radius: 50%;
+    animation: spinnerOne 1.2s linear infinite;
+}
+/* .Spinner div:nth-child(2){
+    border:8px solid transparent;
+    border-bottom-color: rgb(20, 20, 20);
+    animation: spinnerTwo 1.2s linear infinite;
+} */
+
+
+@keyframes spinnerOne {
+    0%{transform: rotate(0deg); border-width: 8px;}
+    50%{transform: rotate(180deg); border-width: 1px;}
+    100%{transform: rotate(360deg); border-width: 8px;}
+}
+@keyframes spinnerTwo {
+    0%{transform: rotate(0deg); border-width: 1px;}
+    50%{transform: rotate(180deg); border-width: 8px;}
+    100%{transform: rotate(360deg); border-width: 1px;}
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+ 
+th{
+    text-align: left;
+    padding: 5px;
+    font-weight: bold;
+}
+.cart-head{
+    text-align: left;
+    padding: 5px;
+    color: white;
+    background: #cf0f0f;
+    font-weight: normal;
+}
+td{
+    padding: 15px 5px;
+    margin-bottom: 10px;
+}
+td .qty{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #222;
+}
+
+td  img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
 }
